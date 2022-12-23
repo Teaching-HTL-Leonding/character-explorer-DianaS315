@@ -2,6 +2,7 @@
 
 ## Introduction
 
+used api: https://uselessfacts.jsph.pl/ 
 Welcome to the programming homework on building an Angular application to explore favorite comic and movie characters!
 
 In this assignment, you will have the opportunity to put your skills in Angular and Web APIs to the test by creating an application that allows users to browse and learn about their favorite characters from various franchises.
