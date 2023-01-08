@@ -1,0 +1,43 @@
+<h1>All Ponies</h1>
+
+<form>
+  <mat-form-field class="example-full-width">
+    <mat-label>Find a Pony</mat-label>
+    <input  matInput type="text" name="filter" placeholder="Name" [(ngModel)]="this.nameInput">
+  </mat-form-field>
+  <div class="content">
+    <div class="item" *ngFor="let pony of this.getPonies()">
+      <mat-card>
+        <mat-card-content>
+          <button
+            mat-icon-button
+            class="button-bind-right"
+            (click)="this.changeFavouritism(pony.id)"
+          >
+            <mat-icon *ngIf="this.isPonyFav(pony.id)">star</mat-icon>
+            <mat-icon *ngIf="!this.isPonyFav(pony.id)">star_border</mat-icon>
+          </button>
+          <img class="img-center" src="{{ pony.image[0] }}" />
+          <br />
+          <label
+            >Name: <strong>{{ pony.name }}</strong></label
+          >
+          <label *ngIf="pony.alias">
+            also known as <strong>{{ pony.alias }}</strong></label
+          >
+          <br />
+          <label>Kind: {{ pony.kind }}</label>
+        </mat-card-content>
+        <button
+          class="button-bind-bottom"
+          mat-flat-button
+          color="primary"
+          routerLink="/detailed-pony-information"
+        >
+          Details
+        </button>
+      </mat-card>
+      <br />
+    </div>
+  </div>
+</form>

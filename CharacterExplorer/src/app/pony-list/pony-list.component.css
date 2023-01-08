@@ -1,0 +1,49 @@
+.content {
+  display: flex;
+  flex-wrap: wrap;
+}
+.item {
+  margin: 60px;
+  margin-bottom: -20px;
+  width: 200px;
+}
+
+mat-card {
+  min-height: 400px;
+  padding: 10px;
+  min-width: 300px;
+  box-shadow: 20px 20px 20px rgb(168, 164, 164);
+  height: 300px;
+}
+
+.img-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  max-height: 170px;
+}
+
+.button-bind-right {
+  display: block;
+  margin-left: 85%;
+  margin-right: auto;
+}
+
+.button-bind-bottom {
+  display: block;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+mat-card-content {
+  margin-bottom: 10%;
+}
+
+mat-form-field {
+  margin-left: 64%;
+  width: 30%;
+  margin-right: 20px;
+}
