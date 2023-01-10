@@ -1,0 +1,23 @@
+<h1>{{ pony!.name }}</h1>
+<mat-card>
+  <img src="{{pony!.image[0]}}" width="250px" class="img-center">
+  <mat-card-content>
+    <br>
+    <p *ngIf="pony!.alias"><strong>Alias:</strong> {{ pony!.alias }}</p>
+    <br />
+    <br />
+    <strong>Residence: </strong>{{ pony!.residence }}
+    <br />
+    <br />
+    <strong> Occupation: </strong>{{ pony!.occupation }} <br /><br />
+    <strong>Kind: </strong>
+    <p *ngFor="let kind of this.pony!.kind">
+      {{ kind }}
+    </p>
+    <br>
+    <strong>Other images: </strong>
+    <p *ngFor="let img of this.pony!.image" >
+      <img src="{{img}}" height="170px" class="img-content">
+    </p>
+  </mat-card-content>
+</mat-card>

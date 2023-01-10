@@ -1,8 +1,21 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  background-image: url(/assets/background-image.png);
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-size: cover;
+  background-attachment: fixed;
 
-	body{
-	  max-width: 720px;
-	  margin: 0 auto;
-	 font-family: Arial, Helvetica, sans-serif,
-	 "Helvetica Neue", sans-serif;
-	  background: #F3F7FF;
-	}
+}
+body{
+  width: 720px;
+  background-image: none;
+  margin: 0 auto;
+  font-family: Arial, Helvetica, sans-serif, "Helvetica Neue", sans-serif;
+}
+
+h1{
+  text-align: center;
+  padding-top: 20px;;
+}

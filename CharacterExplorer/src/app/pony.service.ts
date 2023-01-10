@@ -3,8 +3,8 @@ import { Inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { AirtableDataService } from './airtable-data.service';
 import { BASE_URL } from './app.module';
-import { Fields, IDs } from './pony-list/pony-list.component';
-import { Record } from './pony-list/pony-list.component';
+import { IDs } from './pony-list/pony-list.component';
+
 
 export interface Root {
   status?: number;
@@ -34,8 +34,23 @@ export class PonyService {
   ) {}
 
   public airtableData!: IDs;
+  public ponies!: Root;
+  public nameInput: String = ""
 
-  public loadALlPonies(): Observable<Root> {
-    return this.http.get<Root>('http://ponyweb.ml/v1/character/all');
+
+  public loadALlPonies() {
+    this.http.get<Root>('http://ponyweb.ml/v1/character/all').subscribe((data) => (this.ponies = data));
+  }
+
+  public getPonies(): Daum[] {
+    let result: Daum[] = this.ponies.data;
+    if (this.nameInput !== '' && this.nameInput !== ' ') {
+      result = result.filter((datum) =>
+        datum.name
+          .toLocaleLowerCase()
+          .includes(this.nameInput.toLowerCase().toString())
+      );
+    }
+    return result;
   }
 }

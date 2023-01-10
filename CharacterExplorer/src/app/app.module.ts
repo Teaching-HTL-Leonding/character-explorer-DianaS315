@@ -18,7 +18,7 @@ import {MatSliderModule} from '@angular/material/slider';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatCardModule} from '@angular/material/card';
 import { FavouritePoniesComponent } from './favourite-ponies/favourite-ponies.component';
-import { DetailedPonyInformationComponent } from './detailed-pony-information/detailed-pony-information.component';
+import { DetailedPonyInformationComponent } from './pony-list/detailed-pony-information/detailed-pony-information.component';
 import { AirtableAuthInterceptor } from './airtable-auth-inerceptor.interceptor';
 
 export const BASE_URL = new InjectionToken<string>('BaseUrl');
@@ -51,11 +51,11 @@ export const AIRTABLE_PAT = new InjectionToken<string>('AirtablePat');
   providers: [
     {
       provide: BASE_URL,
-      useValue: /*url of database*/ ,
+      useValue: 'database url',
     },
     {
       provide: AIRTABLE_PAT,
-      useValue: /*bearer of database */,
+      useValue: 'database bearer pat',
     },
     {
       provide: HTTP_INTERCEPTORS,

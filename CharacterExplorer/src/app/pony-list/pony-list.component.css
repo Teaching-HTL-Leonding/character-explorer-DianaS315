@@ -1,3 +1,4 @@
+
 .content {
   display: flex;
   flex-wrap: wrap;
@@ -12,7 +13,7 @@ mat-card {
   min-height: 400px;
   padding: 10px;
   min-width: 300px;
-  box-shadow: 20px 20px 20px rgb(168, 164, 164);
+  box-shadow: 20px 20px 20px rgb(190, 207, 225);
   height: 300px;
 }
 

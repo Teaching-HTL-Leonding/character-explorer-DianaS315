@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AirtableDataService } from '../airtable-data.service';
 import { Daum, PonyService, Root } from '../pony.service';
-import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 export interface IDs {
   records: Record[];
@@ -23,37 +23,18 @@ export interface Fields {
   styleUrls: ['./pony-list.component.css'],
 })
 export class PonyListComponent implements OnInit {
-  public ponies!: Root;
   public airtableData!: IDs;
-  public nameInput: String = '';
 
+  selectedId: number = 0;
 
   ngOnInit(): void {
-    this.loadAllPonies();
+    this.ponyService.loadALlPonies();
     this.getFavourites();
   }
   constructor(
     public ponyService: PonyService,
-    public database: AirtableDataService,
-    private route: ActivatedRoute,
-  ) {
-  }
-
-  public getPonies(): Daum[] {
-    let result: Daum[] = this.ponies.data;
-    if (this.nameInput !== '' && this.nameInput !== ' ') {
-      result = result.filter((datum) =>
-        datum.name
-          .toLocaleLowerCase()
-          .includes(this.nameInput.toLowerCase().toString())
-      );
-    }
-    return result;
-  }
-
-  public loadAllPonies() {
-    this.ponyService.loadALlPonies().subscribe((data) => (this.ponies = data));
-  }
+    public database: AirtableDataService
+  ) {}
 
   public getFavourites() {
     this.database
