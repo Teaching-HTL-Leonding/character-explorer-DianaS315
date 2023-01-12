@@ -9,7 +9,6 @@ import { PonyService } from '../pony.service';
   styleUrls: ['./favourite-ponies.component.css'],
 })
 export class FavouritePoniesComponent implements OnInit {
-  public nameInput: String = '';
 
   constructor(
     public ponyService: PonyService,
@@ -28,6 +27,7 @@ export class FavouritePoniesComponent implements OnInit {
       .loadDataFromTable()
       .subscribe((data) => (this.airtableData = data));
   }
+
   public isPonyFav(ponyId: number): boolean {
     for (let entry of this.airtableData.records) {
       if (entry.fields.ID === ponyId) {

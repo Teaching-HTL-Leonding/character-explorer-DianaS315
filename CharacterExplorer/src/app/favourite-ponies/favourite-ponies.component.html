@@ -8,7 +8,7 @@
       type="text"
       name="filter"
       placeholder="Name"
-      [(ngModel)]="this.nameInput"
+      [(ngModel)]="this.ponyService.nameInput"
     />
   </mat-form-field>
   <div class="item" *ngFor="let pony of this.ponyService.getPonies()">
