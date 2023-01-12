@@ -51,11 +51,11 @@ export const AIRTABLE_PAT = new InjectionToken<string>('AirtablePat');
   providers: [
     {
       provide: BASE_URL,
-      useValue: 'database url',
+      useValue: 'https://api.airtable.com/v0/app2blJiUeR3XZj7Y/PonyDatabase',
     },
     {
       provide: AIRTABLE_PAT,
-      useValue: 'database bearer pat',
+      useValue: 'patLccZr3xy5wjymB.fdd21f27f0c3586e2eb27145a1811b1435e17f6b085c6497c797e27bf3ae0db4',
     },
     {
       provide: HTTP_INTERCEPTORS,

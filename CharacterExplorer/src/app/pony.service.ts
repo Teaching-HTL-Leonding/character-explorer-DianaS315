@@ -30,7 +30,6 @@ export class PonyService {
   constructor(
     private http: HttpClient,
     public database: AirtableDataService,
-    @Inject(BASE_URL) private baseUrl: string
   ) {}
 
   public airtableData!: IDs;
@@ -44,6 +43,7 @@ export class PonyService {
 
   public getPonies(): Daum[] {
     let result: Daum[] = this.ponies.data;
+
     if (this.nameInput !== '' && this.nameInput !== ' ') {
       result = result.filter((datum) =>
         datum.name
