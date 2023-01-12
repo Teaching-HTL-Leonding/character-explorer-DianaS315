@@ -1,5 +1,7 @@
 # Character Explorer
 
+uses my little pony api
+
 ## Introduction
 
 used api: https://uselessfacts.jsph.pl/  
